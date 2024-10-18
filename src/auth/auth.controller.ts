@@ -29,7 +29,7 @@ export class AuthController {
     // Configura la cookie con el token JWT
     res.setHeader('Set-Cookie', cookie.serialize('token', result.token, {
       httpOnly: false,
-      secure: process.env.NODE_ENV === 'production',
+      secure: true,
       sameSite: 'strict',
       maxAge: 60 * 60 * 24 * 7,
       path: '/',
@@ -41,7 +41,7 @@ export class AuthController {
   logout(@Res() res: Response) {
     res.clearCookie('token', {
       httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',  // Usar "secure" en producción
+      secure: true,  // Usar "secure" en producción
       sameSite: 'strict',
       path: '/'
     });

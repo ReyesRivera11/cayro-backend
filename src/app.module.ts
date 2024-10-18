@@ -7,7 +7,7 @@ import { AuthModule } from './auth/auth.module';
 @Module({
   imports: [
     ConfigModule.forRoot(),
-    MongooseModule.forRoot(process.env.MONGODB_URI),
+    MongooseModule.forRoot("mongodb+srv://cayrouniformes38:KtexduxLcm4yQK3u@cluster0.n6tir.mongodb.net/cayrodb?retryWrites=true&w=majority&appName=Cluster0"),
     UsersModule,
     AuthModule,
   ],
