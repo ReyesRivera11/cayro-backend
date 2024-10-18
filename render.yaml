@@ -4,3 +4,8 @@ services:
     env: node
     buildCommand: npm install && npm run build
     startCommand: npm run start
+    envVars:
+      - key: NODE_VERSION
+        value: 20.15.1
+      - key: USE_BUN
+        value: false
